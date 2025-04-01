@@ -1,5 +1,7 @@
-import React from "react";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
+
+// URL del backend en Railway
+const API_URL = "https://mint-menu-production.up.railway.app/menu";
 
 const obtenerHorario = () => {
   const hora = new Date().getHours();
@@ -19,7 +21,7 @@ const Menu = () => {
   const horario = obtenerHorario();
 
   useEffect(() => {
-    fetch("./menu.json")
+    fetch(API_URL)
       .then((res) => res.json())
       .then((data) => setMenu(data[horario]))
       .catch((error) => console.error("Error cargando el menú:", error));

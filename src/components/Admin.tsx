@@ -1,5 +1,4 @@
-import React from "react";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
 // Define la estructura del menú
 interface MenuItem {
@@ -11,12 +10,15 @@ interface Menu {
   [categoria: string]: MenuItem[];
 }
 
+// URL del backend en Railway
+const API_URL = "https://mint-menu-production.up.railway.app/menu";
+
 const Admin = () => {
   const [menu, setMenu] = useState<Menu>({});
   const [editedMenu, setEditedMenu] = useState<Menu>({});
 
   useEffect(() => {
-    fetch("/menu.json")
+    fetch(API_URL)
       .then((res) => res.json())
       .then((data: Menu) => {
         setMenu(data);
@@ -32,7 +34,7 @@ const Admin = () => {
   };
 
   const guardarCambios = () => {
-    fetch("http://localhost:5000/menu", {
+    fetch(API_URL, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
