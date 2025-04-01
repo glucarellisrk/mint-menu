@@ -1,0 +1,42 @@
+{
+  "desayuno": [
+    {
+      "nombre": "Café",
+      "precio": 2.5
+    },
+    {
+      "nombre": "Medialunas",
+      "precio": 1.5
+    }
+  ],
+  "almuerzo": [
+    {
+      "nombre": "Milanesa con papas",
+      "precio": 123
+    },
+    {
+      "nombre": "Ensalada César",
+      "precio": 4.5
+    }
+  ],
+  "merienda": [
+    {
+      "nombre": "Té con tostadas",
+      "precio": 3
+    },
+    {
+      "nombre": "Churros",
+      "precio": 2
+    }
+  ],
+  "cena": [
+    {
+      "nombre": "Pizza",
+      "precio": 6
+    },
+    {
+      "nombre": "Hamburguesa",
+      "precio": 5.5
+    }
+  ]
+}
