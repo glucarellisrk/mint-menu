@@ -89,7 +89,7 @@ function App() {
       "CLÁSICO",
       "CORTITO",
       "MAFALDA",
-      "TOSTADAS ",
+      "TOSTADAS_",
       "PROTEICO",
       "FIT",
       "AVOCADO TOAST",
@@ -246,6 +246,15 @@ function App() {
                       title="Misceláneas"
                       icon={categoryIcons.miscelaneas}
                       items={filterByCategory(items, categories.miscelaneas)}
+                      />
+                    )}
+
+                     {/* Misceláneas Section */}
+                     {(time === "desayuno" || time === "merienda") && (
+                      <MenuSection
+                      title="Algo Dulce"
+              icon={categoryIcons.algoDulce}
+              items={filterByCategory(items, categories.algoDulce)}
                       />
                     )}
 
