@@ -89,7 +89,7 @@ function App() {
       "CLÁSICO",
       "CORTITO",
       "MAFALDA",
-      "TOSTADAS",
+      "TOSTADAS ",
       "PROTEICO",
       "FIT",
       "AVOCADO TOAST",
