@@ -320,38 +320,40 @@ function MenuSection({ title, icon, items }) {
   return (
     <motion.div initial="hidden" animate="visible" variants={containerVariants}>
       <div className="card overflow-hidden border border-mint-primary-border shadow-md hover:shadow-lg transition-shadow duration-300">
-      <div className="card-header bg-mint-primary-light">
-        <div className="flex items-center gap-2 text-mint-text font-bold text-xl p-4">
-        {icon}
-        {title}
-        </div>
-        <div className="text-mint-text-light text-sm px-4 pb-4">
-        {items.length} {items.length === 1 ? "item" : "items"}
-        </div>
-      </div>
-      <div className="card-content pt-6 bg-white p-4">
-        <motion.div className="grid grid-cols-1 md:grid-cols-2 gap-4" variants={containerVariants}>
-        {items.map((item, index) => (
-          <motion.div
-          key={index}
-          className="flex justify-between items-center border-b border-mint-primary-border pb-2 hover:bg-mint-secondary p-2 rounded transition-colors duration-200"
-          variants={itemVariants}
-          whileHover={{ scale: 1.02 }}
-          >
-          <div className="flex-1">
-            <span className="font-medium">{item.nombre}</span>
+        <div className="card-header bg-mint-primary-light">
+          <div className="flex items-center gap-2 text-mint-text font-bold text-xl p-4">
+            {icon}
+            {title}
           </div>
-          <div className="ml-4">
-            <span className="font-bold text-mint-primary">${item.precio}</span>
+          <div className="text-mint-text-light text-sm px-4 pb-4">
+            {items.length} {items.length === 1 ? "item" : "items"}
           </div>
+        </div>
+        <div className="card-content pt-6 bg-white p-4">
+          <motion.div className="grid grid-cols-1 md:grid-cols-2 gap-4" variants={containerVariants}>
+            {items.map((item, index) => (
+              <motion.div
+                key={index}
+                className="border-b border-mint-primary-border pb-2 hover:bg-mint-secondary p-2 rounded transition-colors duration-200"
+                variants={itemVariants}
+                whileHover={{ scale: 1.02 }}
+              >
+                <div className="flex justify-between items-center">
+                  <span className="font-medium">{item.nombre}</span>
+                  <span className="font-bold text-mint-primary">${item.precio}</span>
+                </div>
+                {item.descripcion && (
+                  <p className="text-sm text-mint-text-light mt-1">{item.descripcion}</p>
+                )}
+              </motion.div>
+            ))}
           </motion.div>
-        ))}
-        </motion.div>
-      </div>
+        </div>
       </div>
     </motion.div>
   )
 }
+
 
 function AdminPanel({ editedMenu, actualizarPrecio, guardarCambios }) {
   return (
