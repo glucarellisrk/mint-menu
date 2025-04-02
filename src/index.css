@@ -389,3 +389,21 @@ body {
   padding: 1rem 0;
   box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
 }
+
+/* Menu Item */
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu-item .item-name {
+  flex: 1;
+  font-weight: 500; /* Medium font weight */
+}
+
+.menu-item .item-price {
+  margin-left: 1rem; /* Add spacing between name and price */
+  font-weight: 700; /* Bold font weight */
+  color: var(--mint-primary); /* Use your primary color */
+}

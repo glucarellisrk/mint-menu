@@ -56,23 +56,36 @@ const Admin = () => {
   return (
     <div>
       <h2>Administración</h2>
-      {Object.keys(editedMenu || {}).map((categoria) => (
-        <div key={categoria}>
-          <h3>{categoria.toUpperCase()}</h3>
-          <ul>
-            {editedMenu[categoria]?.map((item, index) => (
-              <li key={index}>
-                {item.nombre} - $
-                <input
-                  type="number"
-                  value={item.precio}
-                  onChange={(e) => actualizarPrecio(categoria, index, e.target.value)}
-                />
-              </li>
-            ))}
-          </ul>
-        </div>
-      ))}
+      {Object.keys(editedMenu || {}).map((categoria) => {
+        const items = editedMenu[categoria];
+        if (!Array.isArray(items)) {
+          // Si no es un array, ignóralo o maneja el caso especial
+          return null;
+        }
+
+        if (categoria === "categories") {
+          // Lógica especial para manejar las subcategorías
+          return null;
+        }
+
+        return (
+          <div key={categoria}>
+            <h3>{categoria.toUpperCase()}</h3>
+            <ul>
+              {items.map((item, index) => (
+                <li key={index}>
+                  {item.nombre} - $
+                  <input
+                    type="number"
+                    value={item.precio}
+                    onChange={(e) => actualizarPrecio(categoria, index, e.target.value)}
+                  />
+                </li>
+              ))}
+            </ul>
+          </div>
+        );
+      })}
       <button onClick={guardarCambios}>Guardar Cambios</button>
     </div>
   );

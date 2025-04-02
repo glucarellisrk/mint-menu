@@ -1,121 +1,49 @@
 {
   "desayuno": [
-    {
-      "nombre": "Café",
-      "precio": 2.5
-    },
-    {
-      "nombre": "Medialunas",
-      "precio": 1.5
-    }
+    {"nombre": "Café", "precio": 800},
+    {"nombre": "Medialunas", "precio": 800},
+    {"nombre": "Pocillo", "precio": 800},
+    {"nombre": "Submarino", "precio": 1500}
   ],
   "almuerzo": [
-    {
-      "nombre": "Milanesa con papas",
-      "precio": 123
-    },
-    {
-      "nombre": "Ensalada César",
-      "precio": 4.5
-    }
+    {"nombre": "Milanesa con papas", "precio": 5000},
+    {"nombre": "Ensalada César", "precio": 2500},
+    {"nombre": "Lomo al Champiñon", "precio": 6000},
+    {"nombre": "Tallarines", "precio": 5000}
   ],
   "merienda": [
-    {
-      "nombre": "Té con tostadas",
-      "precio": 300
-    },
-    {
-      "nombre": "Churros",
-      "precio": 2
-    }
+    {"nombre": "Té con tostadas", "precio": 300},
+    {"nombre": "Churros", "precio": 1200},
+    {"nombre": "Cheesecake", "precio": 2200},
+    {"nombre": "Muffins", "precio": 1000}
   ],
   "cena": [
-    {
-      "nombre": "Pizza",
-      "precio": 6
-    },
-    {
-      "nombre": "Hamburguesa",
-      "precio": 5.5
-    }
+    {"nombre": "Pizza", "precio": 6000},
+    {"nombre": "Hamburguesa", "precio": 5500},
+    {"nombre": "Quesadillas", "precio": 4700},
+    {"nombre": "Tacos Carne / pollo", "precio": 4500}
   ],
-  "categories": {
+  "categorias": {
     "cafeteria": [
-      {"nombre": "Pocillo", "precio": 800},
-      {"nombre": "Jarrito", "precio": 1000},
-      {"nombre": "Doble", "precio": 1200},
-      {"nombre": "Mug", "precio": 1300},
-      {"nombre": "Te saborizados", "precio": 1100},
-      {"nombre": "Submarino", "precio": 1500},
-      {"nombre": "Capuchino", "precio": 1600},
-      {"nombre": "Latte", "precio": 1700},
-      {"nombre": "Mocca", "precio": 1800},
-      {"nombre": "Frapuccino", "precio": 2000}
+      "Pocillo", "Jarrito", "Doble", "Mug", "Te saborizados", "Submarino", "Capuchino", "Latte", "Mocca", "Frapuccino"
     ],
     "miscelaneas": [
-      {"nombre": "Tortilla", "precio": 900},
-      {"nombre": "Tostadas", "precio": 700},
-      {"nombre": "Untables", "precio": 500},
-      {"nombre": "Cazuela de Palta", "precio": 2500},
-      {"nombre": "Medialuna", "precio": 800},
-      {"nombre": "Medialuna rellena con J y Q", "precio": 1200}
+      "Tortilla", "Tostadas", "Untables", "Cazuela de Palta", "Medialuna", "Medialuna rellena con J y Q"
     ],
     "algoDulce": [
-      {"nombre": "Muffins", "precio": 1000},
-      {"nombre": "Donna", "precio": 1100},
-      {"nombre": "Chocotorta", "precio": 2000},
-      {"nombre": "Lemon Pie", "precio": 1800},
-      {"nombre": "Alfajor", "precio": 600},
-      {"nombre": "Cheesecake", "precio": 2200},
-      {"nombre": "Alfajor gluten free", "precio": 900}
+      "Muffins", "Donna", "Chocotorta", "Lemon Pie", "Alfajor", "Cheesecake", "Alfajor gluten free"
     ],
     "combos": [
-      {"nombre": "CLÁSICO", "precio": 3000},
-      {"nombre": "CORTITO", "precio": 2800},
-      {"nombre": "MAFALDA", "precio": 3200},
-      {"nombre": "TOSTADAS", "precio": 2500},
-      {"nombre": "PROTEICO", "precio": 3500},
-      {"nombre": "FIT", "precio": 3300},
-      {"nombre": "AVOCADO TOAST", "precio": 3700},
-      {"nombre": "BONAERENSE", "precio": 4000},
-      {"nombre": "TABLA PARA COMPARTIR", "precio": 5000}
+      "CLÁSICO", "CORTITO", "MAFALDA", "TOSTADAS", "PROTEICO", "FIT", "AVOCADO TOAST", "BONAERENSE", "TABLA PARA COMPARTIR"
     ],
     "brunch": [
-      {"nombre": "Avocado Toast", "precio": 2500},
-      {"nombre": "Huevo revuelto con panceta", "precio": 2200},
-      {"nombre": "Omelette jamón y queso", "precio": 2300},
-      {"nombre": "Tostado de jamón y queso", "precio": 2000},
-      {"nombre": "Waffles con mantequilla de maní", "precio": 2700},
-      {"nombre": "Waffles con Nutella", "precio": 2900},
-      {"nombre": "Waffle con helado", "precio": 3000},
-      {"nombre": "Copa Mint", "precio": 3500}
+      "Avocado Toast", "Huevo revuelto con panceta", "Omelette jamón y queso", "Tostado de jamón y queso", "Waffles con mantequilla de maní", "Waffles con Nutella", "Waffle con helado", "Copa Mint"
     ],
     "principales": [
-      {"nombre": "Lomo al Champiñon", "precio": 6000},
-      {"nombre": "Lomo Grillado", "precio": 5800},
-      {"nombre": "Pechuga Grillada", "precio": 5500},
-      {"nombre": "Pollo al puerro", "precio": 5200},
-      {"nombre": "Milanesa Clásica", "precio": 5000},
-      {"nombre": "Milanesa napolitana", "precio": 5500},
-      {"nombre": "Milanesa Mint", "precio": 5700},
-      {"nombre": "Wok de vegetales", "precio": 4800},
-      {"nombre": "Tallarines", "precio": 5000},
-      {"nombre": "Sorrentinos de Jamón y queso", "precio": 5200},
-      {"nombre": "Tacos Carne / pollo", "precio": 4500},
-      {"nombre": "Quesadillas", "precio": 4700}
+      "Lomo al Champiñon", "Lomo Grillado", "Pechuga Grillada", "Pollo al puerro", "Milanesa Clásica", "Milanesa napolitana", "Milanesa Mint", "Wok de vegetales", "Tallarines", "Sorrentinos de Jamón y queso", "Tacos Carne / pollo", "Quesadillas"
     ],
     "bebidas": [
-      {"nombre": "Licuados", "precio": 2000},
-      {"nombre": "Jugo de Naranja", "precio": 1800},
-      {"nombre": "Limonada", "precio": 1700},
-      {"nombre": "Limonada Mint", "precio": 1900},
-      {"nombre": "Agua con/sin gas", "precio": 1000},
-      {"nombre": "Agua Tónica", "precio": 1200},
-      {"nombre": "Aquarius", "precio": 1500},
-      {"nombre": "Línea coca cola", "precio": 1600},
-      {"nombre": "Heineken", "precio": 2000},
-      {"nombre": "Imperial", "precio": 2200},
-      {"nombre": "Corona", "precio": 2500}
+      "Licuados", "Jugo de Naranja", "Limonada", "Limonada Mint", "Agua con/sin gas", "Agua Tónica", "Aquarius", "Línea coca cola", "Heineken", "Imperial", "Corona"
     ]
   }
 }
