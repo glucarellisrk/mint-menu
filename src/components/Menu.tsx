@@ -83,7 +83,7 @@ function App() {
       "Mocca",
       "Frapuccino",
     ],
-    miscelaneas: ["Tortilla", "Tostadas", "Untables", "Cazuela de Palta", "Medialuna", "Medialuna rellena con J y Q"],
+    miscelaneas: ["Tortilla", "Tostada", "Untables", "Cazuela de Palta", "Medialuna", "Medialuna rellena con J y Q"],
     algoDulce: ["Muffins", "Donna", "Chocotorta", "Lemon Pie", "Alfajor", "Cheesecake", "Alfajor gluten free"],
     combos: [
       "CLÁSICO",

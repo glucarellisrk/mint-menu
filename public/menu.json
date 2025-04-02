@@ -11,7 +11,7 @@
     { "nombre": "Mocca", "precio": 1300 },
     { "nombre": "Frapuccino", "precio": 1500 },
     { "nombre": "Tortilla", "precio": 1000 },
-    { "nombre": "Tostadas", "precio": 1200 },
+    { "nombre": "Tostada", "precio": 1200 },
     { "nombre": "Untables", "precio": 1200 },
     { "nombre": "Cazuela de Palta", "precio": 1500 },
     { "nombre": "Medialuna", "precio": 800 },
@@ -141,7 +141,7 @@
     ],
     "miscelaneas": [
       "Tortilla",
-      "Tostadas",
+      "Tostada",
       "Untables",
       "Cazuela de Palta",
       "Medialuna",
