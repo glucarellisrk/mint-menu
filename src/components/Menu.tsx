@@ -49,24 +49,25 @@ function App() {
   const horario = obtenerHorario()
 
   useEffect(() => {
-    setLoading(true)
-    fetch(API_URL)
-      .then((res) => {
+    const fetchMenu = async () => {
+      try {
+        setLoading(true)
+        const res = await fetch(API_URL)
         if (!res.ok) {
           throw new Error("Failed to fetch menu data")
         }
-        return res.json()
-      })
-      .then((data) => {
+        const data = await res.json()
         setMenuData(data)
-        setLoading(false)
-      })
-      .catch((error) => {
+      } catch (error) {
         console.error("Error loading menu:", error)
         setError("No pudimos cargar el menú. Por favor, intente nuevamente más tarde.")
+      } finally {
         setLoading(false)
-      })
+      }
+    }
+    fetchMenu()
   }, [])
+  
 
   // Categories from the menu image
   const categories = {
@@ -135,14 +136,13 @@ function App() {
   }
 
   // Function to filter menu items by category
-  const filterByCategory = (
-    items: { nombre: string; precio: number }[],
-    categoryItems: string[]
-  ) => {
-    return items.filter((item) =>
-      categoryItems.some((categoryItem) => item.nombre.toLowerCase().includes(categoryItem.toLowerCase())),
-    )
+  const filterByCategory = (items, categoryItems) => {
+    return items.filter(item => {
+      const itemNombre = item.nombre.toLowerCase()
+      return categoryItems.some(categoryItem => itemNombre.includes(categoryItem.toLowerCase()))
+    })
   }
+  
 
   // Mapeo de íconos por categoría
   const categoryIcons = {
