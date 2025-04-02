@@ -339,8 +339,8 @@ function MenuSection({ title, icon, items }) {
                 whileHover={{ scale: 1.02 }}
               >
                 <div className="flex justify-between items-center">
-                  <span className="font-medium">{item.nombre}</span>
-                  <span className="font-bold text-mint-primary">${item.precio}</span>
+                  <span className="font-medium flex-1">{item.nombre}</span>
+                  <span className="font-bold text-mint-primary ml-auto">${item.precio}</span>
                 </div>
                 {item.descripcion && (
                   <p className="text-sm text-mint-text-light mt-1">{item.descripcion}</p>
