@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from "react";
+import { useEffect, useState } from "react"
+import "./Admin.css"
+import React from "react";
 
 // Define la estructura del menú
 interface MenuItem {

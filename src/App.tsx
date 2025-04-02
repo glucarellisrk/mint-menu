@@ -7,7 +7,7 @@ function App() {
   return (
     <Router>
       <div>
-        <h1>Menú Digital</h1>
+       
         <Routes>
           <Route path="/" element={<Menu />} />
           <Route path="/admin" element={<Admin />} />
