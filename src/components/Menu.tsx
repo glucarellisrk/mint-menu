@@ -259,7 +259,7 @@ function App() {
                     )}
 
                     {/* Brunch Section */}
-                    {(time === "desayuno" || time === "almuerzo") && (
+                    {(time === "desayuno" || time === "merienda") && (
                       <MenuSection
                         title="Brunch"
                         icon={categoryIcons.brunch}
