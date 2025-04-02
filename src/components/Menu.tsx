@@ -67,7 +67,7 @@ function App() {
     }
     fetchMenu()
   }, [])
-  
+
 
   // Categories from the menu image
   const categories = {
@@ -142,7 +142,7 @@ function App() {
       return categoryItems.some(categoryItem => itemNombre.includes(categoryItem.toLowerCase()))
     })
   }
-  
+
 
   // Mapeo de íconos por categoría
   const categoryIcons = {
@@ -166,11 +166,11 @@ function App() {
       >
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center">
-        <h1 className="text-3xl font-bold">Mint Restaurant</h1>
-        <div className="flex items-center gap-2 bg-mint-secondary px-3 py-1 rounded-full ml-auto">
-          <Clock className="h-5 w-5" />
-          <span className="ml-2 capitalize">{horario}</span>
-        </div>
+            <h1 className="text-3xl font-bold">Mint Restaurant</h1>
+            <div className="flex items-center gap-2 bg-mint-secondary px-3 py-1 rounded-full ml-auto">
+              <Clock className="h-5 w-5" />
+              <span className="ml-2 capitalize">{horario}</span>
+            </div>
           </div>
         </div>
       </motion.header>
@@ -184,102 +184,111 @@ function App() {
         ) : error ? (
           <div className="text-center text-red-500 p-4">{error}</div>
         ) : (
-            <>
+          <>
             {/* Tabs */}
             <div className="w-full mb-8">
               <div className="grid w-full grid-cols-4 bg-mint-primary-light rounded-lg overflow-hidden">
-              <TabButton
-                active={activeTab === "desayuno"}
-                onClick={() => setActiveTab("desayuno")}
-                icon={<Sun className="h-4 w-4 mr-2" />}
-                label="Desayuno"
-              />
-              <TabButton
-                active={activeTab === "almuerzo"}
-                onClick={() => setActiveTab("almuerzo")}
-                icon={<UtensilsCrossed className="h-4 w-4 mr-2" />}
-                label="Almuerzo"
-              />
-              <TabButton
-                active={activeTab === "merienda"}
-                onClick={() => setActiveTab("merienda")}
-                icon={<Sandwich className="h-4 w-4 mr-2" />}
-                label="Merienda"
-              />
-              <TabButton
-                active={activeTab === "cena"}
-                onClick={() => setActiveTab("cena")}
-                icon={<Moon className="h-4 w-4 mr-2" />}
-                label="Cena"
-              />
+                <TabButton
+                  active={activeTab === "desayuno"}
+                  onClick={() => setActiveTab("desayuno")}
+                  icon={<Sun className="h-4 w-4 mr-2" />}
+                  label="Desayuno"
+                />
+                <TabButton
+                  active={activeTab === "almuerzo"}
+                  onClick={() => setActiveTab("almuerzo")}
+                  icon={<UtensilsCrossed className="h-4 w-4 mr-2" />}
+                  label="Almuerzo"
+                />
+                <TabButton
+                  active={activeTab === "merienda"}
+                  onClick={() => setActiveTab("merienda")}
+                  icon={<Sandwich className="h-4 w-4 mr-2" />}
+                  label="Merienda"
+                />
+                <TabButton
+                  active={activeTab === "cena"}
+                  onClick={() => setActiveTab("cena")}
+                  icon={<Moon className="h-4 w-4 mr-2" />}
+                  label="Cena"
+                />
               </div>
             </div>
 
             {/* Tab Content */}
             {menuData &&
               Object.entries(menuData || {}).map(([time, items]: [string, { nombre: string; precio: number }[]]) => {
-              if (time !== activeTab) return null
+                if (time !== activeTab) return null
 
-              return (
-                <div key={time} className="space-y-8">
-                {/* Cafetería Section */}
-                {(time === "desayuno" || time === "merienda") && (
-                  <MenuSection
-                  title="Cafetería"
-                  icon={categoryIcons.cafeteria}
-                  items={filterByCategory(items, categories.cafeteria)}
-                  />
-                )}
+                return (
+                  <div key={time} className="space-y-8">
+                    {/* Cafetería Section */}
+                    {(time === "desayuno" || time === "merienda") && (
+                      <MenuSection
+                        title="Cafetería"
+                        icon={categoryIcons.cafeteria}
+                        items={filterByCategory(items, categories.cafeteria)}
+                      />
+                    )}
 
-                {/* Combos Section */}
-                {(time === "desayuno" || time === "merienda") && (
-                  <MenuSection
-                  title="Combos"
-                  icon={categoryIcons.combos}
-                  items={filterByCategory(items, categories.combos)}
-                  />
-                )}
+                    {/* Combos Section */}
+                    {(time === "desayuno" || time === "merienda") && (
+                      <MenuSection
+                        title="Combos"
+                        icon={categoryIcons.combos}
+                        items={filterByCategory(items, categories.combos)}
+                      />
+                    )}
 
-                {/* Brunch Section */}
-                {(time === "desayuno" || time === "almuerzo") && (
-                  <MenuSection
-                  title="Brunch"
-                  icon={categoryIcons.brunch}
-                  items={filterByCategory(items, categories.brunch)}
-                  />
-                )}
+                    {/* Misceláneas Section */}
+                    {(time === "desayuno" || time === "merienda") && (
+                      <MenuSection
+                      title="Misceláneas"
+                      icon={categoryIcons.miscelaneas}
+                      items={filterByCategory(items, categories.miscelaneas)}
+                      />
+                    )}
 
-                {/* Principales Section */}
-                {(time === "almuerzo" || time === "cena") && (
-                  <MenuSection
-                  title="Platos Principales"
-                  icon={categoryIcons.principales}
-                  items={filterByCategory(items, categories.principales)}
-                  />
-                )}
+                    {/* Brunch Section */}
+                    {(time === "desayuno" || time === "almuerzo") && (
+                      <MenuSection
+                        title="Brunch"
+                        icon={categoryIcons.brunch}
+                        items={filterByCategory(items, categories.brunch)}
+                      />
+                    )}
 
-                {/* Bebidas Section - Show in all menus */}
-                <MenuSection
-                  title="Bebidas"
-                  icon={categoryIcons.bebidas}
-                  items={filterByCategory(items, categories.bebidas)}
-                />
+                    {/* Principales Section */}
+                    {(time === "almuerzo" || time === "cena") && (
+                      <MenuSection
+                        title="Platos Principales"
+                        icon={categoryIcons.principales}
+                        items={filterByCategory(items, categories.principales)}
+                      />
+                    )}
 
-                {/* All other items */}
-                <MenuSection
-                  title="Otros"
-                  icon={categoryIcons.miscelaneas}
-                  items={items.filter(
-                  (item) =>
-                    !Object.values(categories)
-                    .flat()
-                    .some((categoryItem) => item.nombre.toLowerCase().includes(categoryItem.toLowerCase())),
-                  )}
-                />
-                </div>
-              )
+                    {/* Bebidas Section - Show in all menus */}
+                    <MenuSection
+                      title="Bebidas"
+                      icon={categoryIcons.bebidas}
+                      items={filterByCategory(items, categories.bebidas)}
+                    />
+
+                    {/* All other items */}
+                    <MenuSection
+                      title="Otros"
+                      icon={categoryIcons.miscelaneas}
+                      items={items.filter(
+                        (item) =>
+                          !Object.values(categories)
+                            .flat()
+                            .some((categoryItem) => item.nombre.toLowerCase().includes(categoryItem.toLowerCase())),
+                      )}
+                    />
+                  </div>
+                )
               })}
-            </>
+          </>
         )}
       </main>
 
@@ -302,9 +311,8 @@ function App() {
 function TabButton({ active, onClick, icon, label }) {
   return (
     <button
-      className={`flex items-center justify-center py-2 px-4 transition-all duration-300 ${
-        active ? "bg-mint-primary text-mint-text" : "text-mint-text-light hover:bg-mint-primary-hover"
-      }`}
+      className={`flex items-center justify-center py-2 px-4 transition-all duration-300 ${active ? "bg-mint-primary text-mint-text" : "text-mint-text-light hover:bg-mint-primary-hover"
+        }`}
       onClick={onClick}
     >
       {icon}
