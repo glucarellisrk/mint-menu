@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react"
 import { motion } from "framer-motion"
-import { Clock, Coffee, UtensilsCrossed, Sun, Sandwich, Moon, Soup, Users, IceCreamBowl, Milk, Salad } from "lucide-react"
+import { Clock, Coffee, UtensilsCrossed, Sun, Sandwich, Moon, Soup, Users, IceCreamBowl, Milk, Salad, CakeSlice, CupSoda } from "lucide-react"
 import "./../App.css"
 import React from "react"
 
@@ -193,7 +193,7 @@ function App() {
   const categoryIcons = {
     cafeteria: <Coffee className="h-6 w-6" />,
     miscelaneas: <Sandwich className="h-6 w-6" />,
-    algoDulce: <Moon className="h-6 w-6" />,
+    algoDulce: <CakeSlice className="h-6 w-6" />,
     combos: <UtensilsCrossed className="h-6 w-6" />,
     brunch: <Sun className="h-6 w-6" />,
     principales: <UtensilsCrossed className="h-6 w-6" />,
@@ -201,7 +201,7 @@ function App() {
     guarniciones: <Soup className="h-6 w-6" />,
     ParaCompartir: <Users className="h-6 w-6" />,
     postres: <IceCreamBowl className="h-6 w-6" />,
-    Licuados_1L_o_12: <Milk className="h-6 w-6" />,
+    Licuados_1L_o_12: <CupSoda className="h-6 w-6" />,
     ensaladas: <Salad className="h-6 w-6" />,
     sandwiches: <Sandwich className="h-6 w-6" />,
   }

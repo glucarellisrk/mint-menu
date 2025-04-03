@@ -54,27 +54,23 @@ const Admin = () => {
   };
 
   return (
-    <div>
+    <div className="admin-container">
       <h2>Administración</h2>
       {Object.keys(editedMenu || {}).map((categoria) => {
         const items = editedMenu[categoria];
         if (!Array.isArray(items)) {
-          // Si no es un array, ignóralo o maneja el caso especial
           return null;
         }
-
         if (categoria === "categories") {
-          // Lógica especial para manejar las subcategorías
           return null;
         }
-
         return (
-          <div key={categoria}>
+          <div key={categoria} className="admin-category">
             <h3>{categoria.toUpperCase()}</h3>
             <ul>
               {items.map((item, index) => (
                 <li key={index}>
-                  {item.nombre} - $
+                  <span>{item.nombre} - $</span>
                   <input
                     type="number"
                     value={item.precio}
@@ -86,7 +82,9 @@ const Admin = () => {
           </div>
         );
       })}
-      <button onClick={guardarCambios}>Guardar Cambios</button>
+      <button className="admin-save-button" onClick={guardarCambios}>
+        Guardar Cambios
+      </button>
     </div>
   );
 };

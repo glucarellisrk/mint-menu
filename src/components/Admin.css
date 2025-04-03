@@ -1,98 +1,124 @@
+/* Global styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: #e9eff5;
+}
 
-/* General styles for the Admin component */
+/* Admin container */
 .admin-container {
-    font-family: Arial, sans-serif;
-    padding: 20px;
-    background-color: #f9f9f9;
-    min-height: 100vh;
-  }
-  
-  .admin-container h2 {
-    font-size: 2rem;
-    color: #333;
-    margin-bottom: 20px;
-    text-align: center;
-  }
-  
-  .admin-category {
-    margin-bottom: 30px;
-    padding: 15px;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .admin-category h3 {
-    font-size: 1.5rem;
-    color: #555;
-    margin-bottom: 10px;
-    text-transform: uppercase;
-    border-bottom: 2px solid #ddd;
-    padding-bottom: 5px;
-  }
-  
-  .admin-category ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .admin-category li {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 0;
-    border-bottom: 1px solid #eee;
-  }
-  
-  .admin-category li:last-child {
-    border-bottom: none;
-  }
-  
-  .admin-category li span {
-    font-size: 1rem;
-    color: #333;
-  }
-  
-  .admin-category input[type="number"] {
-    width: 80px;
-    padding: 5px;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    text-align: right;
-  }
-  
-  .admin-category input[type="number"]:focus {
-    outline: none;
-    border-color: #007bff;
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-  }
-  
-  /* Save button styles */
-  .admin-save-button {
-    display: block;
-    margin: 20px auto;
-    padding: 10px 20px;
-    font-size: 1rem;
-    color: #fff;
-    background-color: #007bff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .admin-save-button:hover {
-    background-color: #0056b3;
-  }
-  
-  .admin-save-button:active {
-    background-color: #004085;
-  }
-  
-  .admin-save-button:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
-  }
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 40px 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Header */
+.admin-container h2 {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: 700;
+}
+
+/* Admin category card */
+.admin-category {
+  margin-bottom: 40px;
+  padding: 20px;
+  background-color: #fafafa;
+  border: 1px solid #e1e1e1;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.admin-category:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Category title */
+.admin-category h3 {
+  font-size: 1.75rem;
+  color: #34495e;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  border-bottom: 2px solid #e1e1e1;
+  padding-bottom: 5px;
+}
+
+/* List styling */
+.admin-category ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* List items */
+.admin-category li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.admin-category li:last-child {
+  border-bottom: none;
+}
+
+/* Text styling for menu item name */
+.admin-category li span {
+  font-size: 1.1rem;
+  color: #2c3e50;
+}
+
+/* Input styling */
+.admin-category input[type="number"] {
+  width: 100px;
+  padding: 8px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  text-align: right;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.admin-category input[type="number"]:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 8px rgba(52, 152, 219, 0.5);
+}
+
+/* Save button */
+.admin-save-button {
+  display: block;
+  width: 220px;
+  margin: 30px auto;
+  padding: 12px 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+  background-color: #3498db;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.admin-save-button:hover {
+  background-color: #2980b9;
+  transform: translateY(-2px);
+}
+
+.admin-save-button:active {
+  background-color: #2471a3;
+}
+
+.admin-save-button:disabled {
+  background-color: #bdc3c7;
+  cursor: not-allowed;
+}
