@@ -10,29 +10,80 @@
     { "nombre": "Latte", "precio": 1300 },
     { "nombre": "Mocca", "precio": 1300 },
     { "nombre": "Frapuccino", "precio": 1500 },
-    { "nombre": "CLÁSICO", "precio": 2500, "descripcion": "Infusión + 2 medialunas y 1 tortilla + jugo de naranja" },
-    { "nombre": "CORTITO", "precio": 2000, "descripcion": "Jarrito + 1 medialuna o 1 tortilla" },
-    { "nombre": "MAFALDA", "precio": 3000, "descripcion": "Infusión + 2 medialunas rellenas con jamón y queso + jugo de naranja" },
-    { "nombre": "TOSTADAS_", "precio": 2800, "descripcion": "Infusión + 2 tostadas en pan de campo + 2 untables a elección + jugo de naranja" },
-    { "nombre": "PROTEICO", "precio": 3500, "descripcion": "Infusión + 2 fetas de jamón + 2 fetas de queso + huevo revuelto + tostadas + ensalada de fruta + jugo de naranja" },
-    { "nombre": "FIT", "precio": 3000, "descripcion": "Infusión + waffle con pasta de maní, banana, frutos rojos y miel + jugo de naranja" },
-    { "nombre": "AVOCADO TOAST", "precio": 3200, "descripcion": "Infusión + Avocado Toast con huevo soft + jugo de naranja" },
-    { "nombre": "BONAERENSE", "precio": 2500, "descripcion": "Infusión + ½ tostado jamón y queso + jugo de naranja" },
-    { "nombre": "TABLA PARA COMPARTIR", "precio": 6000, "descripcion": "2 Infusiones + 2 yogurt y granola + 2 ensaladas de fruta + 2 fetas de jamón + 2 fetas de queso + huevo revuelto + 4 tostadas + cazuela con mix de frutas + 2 jugos de naranja" },
+    { "nombre": "Tortilla", "precio": 1000 },
+    { "nombre": "Tostados", "precio": 1200 },
+    { "nombre": "Untables", "precio": 1200 },
+    { "nombre": "Cazuela de Palta", "precio": 1500 },
+    { "nombre": "Medialuna", "precio": 800 },
+    { "nombre": "Medialuna rellena con J y Q", "precio": 1200 },
     { "nombre": "Muffins", "precio": 1000 },
     { "nombre": "Donna", "precio": 1200 },
     { "nombre": "Chocotorta", "precio": 1500 },
     { "nombre": "Lemon Pie", "precio": 1300 },
     { "nombre": "Alfajor", "precio": 1000 },
     { "nombre": "Cheesecake", "precio": 1500 },
-    { "nombre": "Alfajor gluten free", "precio": 1200 }],
+    { "nombre": "Alfajor gluten free", "precio": 1200 },
+    { "nombre": "CLÁSICO", "precio": 2500, "descripcion": "Infusión + 2 medialunas y 1 tortilla + jugo de naranja" },
+    { "nombre": "CORTITO", "precio": 2000, "descripcion": "Jarrito + 1 medialuna o 1 tortilla" },
+    { "nombre": "TOSTADAS", "precio": 2800, "descripcion": "Infusión + 2 tostadas en pan de campo + 2 untables a elección + jugo de naranja" },
+    { "nombre": "MAFALDA", "precio": 3000, "descripcion": "Infusión + 2 medialunas rellenas con jamón y queso + jugo de naranja" },
+    { "nombre": "PROTEICO", "precio": 3500, "descripcion": "Infusión + 2 fetas de jamón + 2 fetas de queso + huevo revuelto + tostadas + ensalada de fruta + jugo de naranja" },
+    { "nombre": "FIT", "precio": 3000, "descripcion": "Infusión + waffle con pasta de maní, banana, frutos rojos y miel + jugo de naranja" },
+    { "nombre": "AVOCADO - TOAST", "precio": 3200, "descripcion": "Infusión + Avocado Toast con huevo soft + jugo de naranja" },
+    { "nombre": "BONAERENSE", "precio": 2500, "descripcion": "Infusión + ½ tostado jamón y queso + jugo de naranja" },
+    { "nombre": "TABLA PARA COMPARTIR", "precio": 6000, "descripcion": "2 Infusiones + 2 yogurt y granola + 2 ensaladas de fruta + 2 fetas de jamón + 2 fetas de queso + huevo revuelto + 4 tostadas + cazuela con mix de frutas + 2 jugos de naranja" },
+    { "nombre": "Avocado Toast", "precio": 5500 },
+    { "nombre": "Huevo revuelto con panceta", "precio": 6000 },
+    { "nombre": "Omelette jamón y queso", "precio": 5750 },
+    { "nombre": "Tostado de jamón y queso", "precio": 4500 },
+    { "nombre": "Waffles con mantequilla de maní", "precio": 6250 },
+    { "nombre": "Waffles con Nutella", "precio": 6500 },
+    { "nombre": "Waffle con helado", "precio": 7000 },
+    { "nombre": "Copa Mint", "precio": 5000, "descripcion": "Yogurt, mix de frutas y cereales" },
+    {
+      "nombre": "Agua con gas 500ml",
+      "precio": 800
+    },
+    {
+      "nombre": "Agua sin gas 500ml",
+      "precio": 800
+    },
+    {
+      "nombre": "Agua Tónica 500ml",
+      "precio": 1000
+    },
+    {
+      "nombre": "Aquarius 500ml",
+      "precio": 1000
+    },
+    {
+      "nombre": "Coca Cola 500ml",
+      "precio": 1200
+    },
+    {
+      "nombre": "Heineken 330ml",
+      "precio": 1500
+    },
+    {
+      "nombre": "Imperial 330ml",
+      "precio": 1500
+    },
+    {
+      "nombre": "Corona 330ml",
+      "precio": 1800
+    },
+    { "nombre": "Banana", "precio": 2000 },
+    { "nombre": "Frutilla", "precio": 2000 },
+    { "nombre": "Durazno", "precio": 2000 },
+    { "nombre": "Arándanos", "precio": 2500 },
+    { "nombre": "Durazno con Naranja", "precio": 2500 },
+    { "nombre": "Frutos Rojos y Naranja", "precio": 2500 },
+    { "nombre": "Jugo de Naranja", "precio": 1500 },
+    { "nombre": "Limonada", "precio": 1500 },
+    { "nombre": "Limonada Mint", "precio": 1800 },
+    { "nombre": "Limonada con frutos rojos", "precio": 2000 }
+  ],
   "almuerzo": [
-    { "nombre": "Omelette jamón y queso", "precio": 3200 },
-    { "nombre": "Tostado de jamón y queso", "precio": 2800 },
-    { "nombre": "Waffles con mantequilla de maní", "precio": 3500 },
-    { "nombre": "Waffles con Nutella", "precio": 3500 },
-    { "nombre": "Waffle con helado", "precio": 3800 },
-    { "nombre": "Copa Mint", "precio": 3000 },
     { "nombre": "Lomo al Champiñon", "precio": 6000 },
     { "nombre": "Lomo Grillado", "precio": 6000 },
     { "nombre": "Pechuga Grillada", "precio": 5500 },
@@ -40,19 +91,101 @@
     { "nombre": "Milanesa Clásica", "precio": 5000 },
     { "nombre": "Milanesa napolitana", "precio": 5500 },
     { "nombre": "Milanesa Mint", "precio": 6000 },
-    { "nombre": "Wok de vegetales", "precio": 5500 },
-    { "nombre": "Tallarines", "precio": 5000 },
-    { "nombre": "Sorrentinos de Jamón y queso", "precio": 5500 },
-    { "nombre": "Op de salsa fileto", "precio": 5500 },
+    { "nombre": "Wok de vegetales, carne o pollo y arroz", "precio": 5500 },
+    { "nombre": "Tallarines", "precio": 5000},
+    { "nombre": "Sorrentinos de Jamón y queso rosa", "precio": 5500, "descripcion": "Op de salsa fileto, blanca, rosa, bolognesa" },
     { "nombre": "Tacos Carne / pollo", "precio": 4500 },
     { "nombre": "Quesadillas", "precio": 4700 },
-    { "nombre": "Ensalada César", "precio": 3500 },
-    { "nombre": "Ensalada Green", "precio": 3500 },
-    { "nombre": "Ensalada Tibia", "precio": 3500 },
-    { "nombre": "Fritas", "precio": 1500 },
+    { "nombre": "Ensalada César", "precio": 3500, "descripcion": "Pollo, lechuga, huevo, parmesano, crutones y aderezo" },
+    { "nombre": "Ensalada Green", "precio": 3500, "descripcion": "Rúcula, cherrys, huevos, palta, palmitos y semillas" },
+    { "nombre": "Ensalada Tibia", "precio": 3500, "descripcion": "Puré de calabaza, verduras salteadas, huevo soft, nueces y almendras" },
     { "nombre": "Puré de papa", "precio": 1500 },
+    
+  
+    { "nombre": "Papas fritas", "precio": 1500 },
+ 
     { "nombre": "Puré de calabaza", "precio": 1500 },
-    { "nombre": "Ensalada 3 ingredientes", "precio": 2000 }
+    { 
+      "nombre": "Ensalada 3 ingredientes", 
+      "precio": 2000, 
+      "descripcion": "Lechuga, rúcula, tomate, zanahoria, huevo, crutones, queso" 
+    },
+    {
+      "nombre": "Tabla de milanesa",
+      "precio": 7000
+     },
+    {
+      "nombre": "Tabla Mexicana",
+      "precio": 7500
+    },
+    {
+      "nombre": "Picada Premium",
+      "precio": 8500,
+      "descripcion": "Milanesa, Muzzarelitas, Papas fritas, Jamón crudo, Salamin, Jamón cocido, Queso azul, Nueces, Olivas y Pan de Campo"
+    },
+    { "nombre": "Ensalada de frutas", "precio": 2000 },
+    { "nombre": "Flan con Dulce de Leche y Crema", "precio": 2500 },
+    { "nombre": "Panqueque con Dulce de Leche", "precio": 3000 },
+    { "nombre": "Tortas", "precio": 3500 },
+    {
+      "nombre": "Agua con gas 500ml",
+      "precio": 800
+    },
+    {
+      "nombre": "Agua sin gas 500ml",
+      "precio": 800
+    },
+    {
+      "nombre": "Agua Tónica 500ml",
+      "precio": 1000
+    },
+    {
+      "nombre": "Aquarius 500ml",
+      "precio": 1000
+    },
+    {
+      "nombre": "Coca Cola 500ml",
+      "precio": 1200
+    },
+    {
+      "nombre": "Heineken 330ml",
+      "precio": 1500
+    },
+    {
+      "nombre": "Imperial 330ml",
+      "precio": 1500
+    },
+    {
+      "nombre": "Corona 330ml",
+      "precio": 1800
+    },
+    {
+      "nombre": "Español",
+      "precio": 3000,
+      "descripcion": "Rúcula, lajas de parmesano, tomate"
+    },
+    {
+      "nombre": "S. Mint",
+      "precio": 3200,
+      "descripcion": "Jamón, queso, huevo revuelto"
+    },
+    {
+      "nombre": "Un clásico con Palta",
+      "precio": 3500,
+      "descripcion": "Lechuga, tomate, jamón"
+    },
+    {
+      "nombre": "Hamburguesa",
+      "precio": 3500
+    },
+    {
+      "nombre": "Lomito",
+      "precio": 3500
+    },
+    {
+      "nombre": "Lomito Mint",
+      "precio": 3800
+    }
   ],
   "merienda": [
     { "nombre": "Pocillo", "precio": 800 },
@@ -68,7 +201,7 @@
     { "nombre": "CLÁSICO", "precio": 2500, "descripcion": "Infusión + 2 medialunas y 1 tortilla + jugo de naranja" },
     { "nombre": "CORTITO", "precio": 2000, "descripcion": "Jarrito + 1 medialuna o 1 tortilla" },
     { "nombre": "MAFALDA", "precio": 3000, "descripcion": "Infusión + 2 medialunas rellenas con jamón y queso + jugo de naranja" },
-    { "nombre": "TOSTADAS_", "precio": 2800, "descripcion": "Infusión + 2 tostadas en pan de campo + 2 untables a elección + jugo de naranja" },
+    { "nombre": "TOSTADAS", "precio": 2800, "descripcion": "Infusión + 2 tostadas en pan de campo + 2 untables a elección + jugo de naranja" },
     { "nombre": "PROTEICO", "precio": 3500, "descripcion": "Infusión + 2 fetas de jamón + 2 fetas de queso + huevo revuelto + tostadas + ensalada de fruta + jugo de naranja" },
     { "nombre": "FIT", "precio": 3000, "descripcion": "Infusión + waffle con pasta de maní, banana, frutos rojos y miel + jugo de naranja" },
     { "nombre": "AVOCADO TOAST", "precio": 3200, "descripcion": "Infusión + Avocado Toast con huevo soft + jugo de naranja" },
@@ -81,6 +214,7 @@
     { "nombre": "Alfajor", "precio": 1000 },
     { "nombre": "Cheesecake", "precio": 1500 },
     { "nombre": "Alfajor gluten free", "precio": 1200 }
+
   ],
   "cena": [
     { "nombre": "Lomo al Champiñon", "precio": 6000 },
@@ -96,10 +230,19 @@
     { "nombre": "Op de salsa fileto", "precio": 5500 },
     { "nombre": "Tacos Carne / pollo", "precio": 4500 },
     { "nombre": "Quesadillas", "precio": 4700 },
-    { "nombre": "Tabla de milanesa", "precio": 7000 },
-    { "nombre": "Tabla Mexicana", "precio": 7500 },
-    { "nombre": "Picada Premium", "precio": 8500 },
-    { "nombre": "Combo para compartir", "precio": 9000 },
+    {
+      "nombre": "Tabla de milanesa",
+      "precio": 7000
+     },
+    {
+      "nombre": "Tabla Mexicana",
+      "precio": 7500
+    },
+    {
+      "nombre": "Picada Premium",
+      "precio": 8500,
+      "descripcion": "Milanesa, Muzzarelitas, Papas fritas, Jamón crudo, Salamin, Jamón cocido, Queso azul, Nueces, Olivas y Pan de Campo"
+    },
     { "nombre": "Hamburguesa", "precio": 3500 },
     { "nombre": "Lomito", "precio": 3500 },
     { "nombre": "Lomito Mint", "precio": 3800 },
@@ -132,9 +275,14 @@
       "Mocca",
       "Frapuccino"
     ],
+    "ensaladas": [
+      "César",
+      "Green",
+      "Tibia"
+    ],
     "miscelaneas": [
       "Tortilla",
-      "Tostada",
+      "Tostados",
       "Untables",
       "Cazuela de Palta",
       "Medialuna",
@@ -153,7 +301,7 @@
       "CLÁSICO",
       "CORTITO",
       "MAFALDA",
-      "TOSTADAS_",
+      "TOSTADAS",
       "PROTEICO",
       "FIT",
       "AVOCADO TOAST",
@@ -184,18 +332,62 @@
       "Tacos Carne / pollo",
       "Quesadillas"
     ],
-    "bebidas": [
-      "Licuados",
-      "Jugo de Naranja",
-      "Limonada",
-      "Limonada Mint",
-      "Agua con/sin gas",
+    "bebidas": {
+      "Envasado": [
+      "Agua con gas 500ml",
+      "Agua sin gas 500ml",
       "Agua Tónica",
       "Aquarius",
-      "Línea coca cola",
+      "Coca Cola 500ml"
+      ],
+      "Cervezas": [
       "Heineken",
       "Imperial",
       "Corona"
-    ]
+      ]
+    },
+    "Licuados_1L_o_12": [	
+      "Banana",
+      "Frutilla",
+      "Durazno",
+      "Arándanos",
+      "Durazno con Naranja",
+      "Frutos Rojos y Naranja",
+      "Jugo de Naranja",
+      "Limonada",
+      "Limonada Mint",
+      "Limonada con frutos rojos"
+    ],
+    "guarniciones": [
+      "Papas fritas",
+      "Puré de papa",
+      "Puré de calabaza",
+      "Ensalada 3 ingredientes",
+      "Lechuga, rúcula, tomate, zanahoria, huevo, crutones, queso"
+    ],
+    "ParaCompartir": [
+      "Tabla de milanesa",
+      "Tabla Mexicana",
+      "Picada Premium",
+      "Combo para compartir"
+    ],
+    "postres": [
+      "Ensalada de frutas",
+      "Flan con Dulce de Leche y Crema",
+      "Panqueque con Dulce de Leche",
+      "Tortas"
+    ],
+    "sandwichs": {
+      "Frios": [
+        "Español",
+        "S. Mint",
+        "Un clásico con Palta"
+      ],
+      "Calientes": [
+        "Hamburguesa",
+        "Lomito",
+        "Lomito Mint"
+      ]
+    }
   }
 }

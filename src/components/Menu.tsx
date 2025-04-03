@@ -2,13 +2,13 @@
 
 import { useEffect, useState } from "react"
 import { motion } from "framer-motion"
-import { Clock, Coffee, UtensilsCrossed, Sun, Sandwich, Moon } from "lucide-react"
+import { Clock, Coffee, UtensilsCrossed, Sun, Sandwich, Moon, Soup, Users, IceCreamBowl, Milk, Salad } from "lucide-react"
 import "./../App.css"
 import React from "react"
 
 // API URL from Railway
 const API_URL = "https://mint-menu-production.up.railway.app/menu"
-
+// const API_URL = "http://localhost:5000/menu"
 // Function to determine current time period
 const obtenerHorario = () => {
   const hora = new Date().getHours()
@@ -83,16 +83,16 @@ function App() {
       "Mocca",
       "Frapuccino",
     ],
-    miscelaneas: ["Tortilla", "Tostada", "Untables", "Cazuela de Palta", "Medialuna", "Medialuna rellena con J y Q"],
+    miscelaneas: ["Tortilla", "TostadO", "Untables", "Cazuela de Palta", "Medialuna", "Medialuna rellena con J y Q"],
     algoDulce: ["Muffins", "Donna", "Chocotorta", "Lemon Pie", "Alfajor", "Cheesecake", "Alfajor gluten free"],
     combos: [
       "CLÁSICO",
       "CORTITO",
       "MAFALDA",
-      "TOSTADAS_",
+      "TOSTADAS",
       "PROTEICO",
       "FIT",
-      "AVOCADO TOAST",
+      "AVOCADO - TOAST",
       "BONAERENSE",
       "TABLA PARA COMPARTIR",
     ],
@@ -125,13 +125,58 @@ function App() {
       "Jugo de Naranja",
       "Limonada",
       "Limonada Mint",
-      "Agua con/sin gas",
+      "Agua con gas",
+      "Agua sin gas",
       "Agua Tónica",
       "Aquarius",
-      "Línea coca cola",
+      "Coca Cola",
       "Heineken",
       "Imperial",
       "Corona",
+    ],
+    guarniciones: [
+      "Papas fritas",
+      "Puré de papa",
+      "Puré de calabaza",
+      "Ensalada 3 ingredientes",
+      "Lechuga, rúcula, tomate, zanahoria, huevo, crutones, queso",
+    ],
+    ParaCompartir: [
+      "Tabla de milanesa",
+      "Tabla Mexicana",
+      "Picada Premium",
+      "Combo para compartir",
+    ],
+    postres: [
+      "Ensalada de frutas",
+      "Flan con Dulce de Leche y Crema",
+      "Panqueque con Dulce de Leche",
+      "Tortas",
+    ],
+    Licuados_1L_o_12: [
+      "Banana",
+      "Frutilla",
+      "Durazno",
+      "Arándanos",
+      "Durazno con Naranja",
+      "Frutos Rojos y Naranja",
+      "Jugo de Naranja",
+      "Limonada",
+      "Limonada Mint",
+      "Limonada con frutos rojos",
+    ],
+    ensaladas: [
+      "César",
+      "Green",
+      "Tibia",
+    ],
+    sandwiches: [
+      "Español",
+      "S. Mint",
+      "Un clásico con Palta",
+      "Hamburguesa",
+      "Lomito",
+      "Lomito Mint",
     ],
   }
 
@@ -152,7 +197,13 @@ function App() {
     combos: <UtensilsCrossed className="h-6 w-6" />,
     brunch: <Sun className="h-6 w-6" />,
     principales: <UtensilsCrossed className="h-6 w-6" />,
-    bebidas: <Clock className="h-6 w-6" />,
+    bebidas: <Milk className="h-6 w-6" />,
+    guarniciones: <Soup className="h-6 w-6" />,
+    ParaCompartir: <Users className="h-6 w-6" />,
+    postres: <IceCreamBowl className="h-6 w-6" />,
+    Licuados_1L_o_12: <Milk className="h-6 w-6" />,
+    ensaladas: <Salad className="h-6 w-6" />,
+    sandwiches: <Sandwich className="h-6 w-6" />,
   }
 
   return (
@@ -253,8 +304,8 @@ function App() {
                      {(time === "desayuno" || time === "merienda") && (
                       <MenuSection
                       title="Algo Dulce"
-              icon={categoryIcons.algoDulce}
-              items={filterByCategory(items, categories.algoDulce)}
+                      icon={categoryIcons.algoDulce}
+                      items={filterByCategory(items, categories.algoDulce)}
                       />
                     )}
 
@@ -276,12 +327,70 @@ function App() {
                       />
                     )}
 
+                    {/* Licuados 1L o 1/2L */}
+                      {(time === "desayuno" || time === "merienda") && (
+                        <MenuSection
+                          title="Licuados 1L o 1/2L"
+                          icon={categoryIcons.Licuados_1L_o_12}
+                          items={filterByCategory(items, categories.Licuados_1L_o_12)}
+                        />
+                      )}
+
+                    {/* guarniciones Section */}
+                    {(time === "almuerzo" || time === "cena") && (
+                      <MenuSection
+                        title="Guarniciones"
+                        icon={categoryIcons.guarniciones}
+                        items={filterByCategory(items, categories.guarniciones)}
+                      />
+                    )}
+
+                    {/* ensalada Section */}
+                    {(time === "almuerzo" || time === "cena") && (
+                      <MenuSection
+                        title="Ensaladas"
+                        icon={categoryIcons.ensaladas}
+                        items={filterByCategory(items, categories.ensaladas)}
+                      />
+                    )}
+
+                 {/* sandwich Section */}
+                 {(time === "almuerzo" || time === "cena") && (
+                      <MenuSection
+                        title="Sandwiches"
+                        icon={categoryIcons.sandwiches}
+                        items={filterByCategory(items, categories.sandwiches)}
+                      />
+                    )}
+
+                    {/* Para Compartir Section */}
+                    {(time === "almuerzo" || time === "cena") && (
+                      <MenuSection
+                        title="Para Compartir"
+                        icon={categoryIcons.ParaCompartir}
+                        items={filterByCategory(items, categories.ParaCompartir)}
+                      />
+                    )}
+
+                      {/* Postres Section */}
+                      {(time === "almuerzo" || time === "cena") && (
+                      <MenuSection
+                        title="Postres"
+                        icon={categoryIcons.postres}
+                        items={filterByCategory(items, categories.postres)}
+                      />
+                    )}
+
+
                     {/* Bebidas Section - Show in all menus */}
+                    {(time === "desayuno" || time === "almuerzo" || time === "merienda" || time === "cena") && (
+
                     <MenuSection
                       title="Bebidas"
                       icon={categoryIcons.bebidas}
                       items={filterByCategory(items, categories.bebidas)}
                     />
+                    )}
 
                     {/* All other items */}
                     <MenuSection
