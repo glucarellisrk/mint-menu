@@ -1,9 +1,21 @@
+/* src/components/Admin.css */
+/* Mint Restaurant Colors */
+:root {
+  --mint-primary: #bcb596;
+  --mint-primary-light: rgba(188, 181, 150, 0.2);
+  --mint-primary-hover: rgba(188, 181, 150, 0.3);
+  --mint-primary-border: rgba(188, 181, 150, 0.3);
+  --mint-secondary: #fff8e9;
+  --mint-text: #333333;
+  --mint-text-light: #666666;
+}
+
 /* Global styles */
 body {
   margin: 0;
   padding: 0;
   font-family: 'Roboto', sans-serif;
-  background-color: #e9eff5;
+  background-color: var(--mint-secondary);
 }
 
 /* Admin container */
@@ -12,88 +24,137 @@ body {
   margin: 40px auto;
   padding: 40px 20px;
   background-color: #ffffff;
-  border-radius: 10px;
+  border-radius: 12px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
 
 /* Header */
 .admin-container h2 {
   font-size: 2.5rem;
-  color: #2c3e50;
+  color: var(--mint-primary);
   margin-bottom: 30px;
   text-align: center;
   font-weight: 700;
 }
 
-/* Admin category card */
+/* Select de categorías */
+.admin-select-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+.admin-select-container label {
+  font-size: 1rem;
+  color: var(--mint-text);
+  font-weight: 500;
+}
+.admin-select {
+  padding: 8px;
+  font-size: 1rem;
+  border: 1px solid var(--mint-primary-border);
+  border-radius: 6px;
+  background-color: #fafafa;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+.admin-select:focus {
+  outline: none;
+  border-color: var(--mint-primary);
+  box-shadow: 0 0 6px var(--mint-primary-light);
+}
+
+/* Input de búsqueda */
+.admin-search-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.admin-search {
+  width: 300px;
+  padding: 8px 12px;
+  font-size: 1rem;
+  border: 1px solid var(--mint-primary-border);
+  border-radius: 6px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.admin-search:focus {
+  outline: none;
+  border-color: var(--mint-primary);
+  box-shadow: 0 0 6px var(--mint-primary-light);
+}
+
+/* Category card */
 .admin-category {
   margin-bottom: 40px;
   padding: 20px;
-  background-color: #fafafa;
-  border: 1px solid #e1e1e1;
-  border-radius: 8px;
+  background-color: var(--mint-secondary);
+  border: 1px solid var(--mint-primary-border);
+  border-radius: 10px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
 .admin-category:hover {
   transform: translateY(-3px);
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
-
-/* Category title */
 .admin-category h3 {
   font-size: 1.75rem;
-  color: #34495e;
+  color: var(--mint-text);
   margin-bottom: 15px;
   text-transform: uppercase;
-  border-bottom: 2px solid #e1e1e1;
+  border-bottom: 2px solid var(--mint-primary-border);
   padding-bottom: 5px;
 }
 
-/* List styling */
+/* Lista de items */
 .admin-category ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
-
-/* List items */
 .admin-category li {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 12px 0;
-  border-bottom: 1px solid #f0f0f0;
+  border-bottom: 1px solid var(--mint-primary-border);
 }
-
 .admin-category li:last-child {
   border-bottom: none;
 }
-
-/* Text styling for menu item name */
 .admin-category li span {
   font-size: 1.1rem;
-  color: #2c3e50;
+  color: var(--mint-text);
 }
-
-/* Input styling */
 .admin-category input[type="number"] {
   width: 100px;
   padding: 8px;
   font-size: 1rem;
-  border: 1px solid #ccc;
+  border: 1px solid var(--mint-primary-border);
   border-radius: 6px;
   text-align: right;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
-
 .admin-category input[type="number"]:focus {
   outline: none;
-  border-color: #3498db;
-  box-shadow: 0 0 8px rgba(52, 152, 219, 0.5);
+  border-color: var(--mint-primary);
+  box-shadow: 0 0 8px var(--mint-primary-light);
 }
 
-/* Save button */
+/* Alerta de cambios */
+.admin-changes-alert {
+  background-color: var(--mint-primary-light);
+  border-left: 4px solid var(--mint-primary);
+  color: var(--mint-text);
+  padding: 10px;
+  margin: 10px auto;
+  border-radius: 5px;
+  font-weight: bold;
+  text-align: center;
+  max-width: 300px;
+}
+
+/* Botón guardar */
 .admin-save-button {
   display: block;
   width: 220px;
@@ -102,23 +163,40 @@ body {
   font-size: 1.1rem;
   font-weight: 600;
   color: #fff;
-  background-color: #3498db;
+  background-color: var(--mint-primary);
   border: none;
   border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
-
-.admin-save-button:hover {
-  background-color: #2980b9;
+.admin-save-button:hover:not(:disabled) {
+  background-color: var(--mint-primary-hover);
   transform: translateY(-2px);
 }
-
-.admin-save-button:active {
-  background-color: #2471a3;
+.admin-save-button:active:not(:disabled) {
+  background-color: var(--mint-primary);
+}
+.admin-save-button:disabled {
+  background-color: var(--mint-primary-light);
+  cursor: not-allowed;
 }
 
-.admin-save-button:disabled {
-  background-color: #bdc3c7;
-  cursor: not-allowed;
+/* Spinner */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+.admin-spinner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: var(--mint-secondary);
+}
+.admin-spinner {
+  width: 48px;
+  height: 48px;
+  border: 5px solid rgba(0,0,0,0.1);
+  border-top-color: var(--mint-primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
 }

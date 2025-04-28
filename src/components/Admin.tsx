@@ -1,80 +1,133 @@
-import { useEffect, useState } from "react"
-import "./Admin.css"
+// src/components/Admin.tsx
+import { useEffect, useState } from "react";
+import "./Admin.css";
 import React from "react";
 
-// Define la estructura del menú
 interface MenuItem {
   nombre: string;
   precio: number;
 }
-
 interface Menu {
   [categoria: string]: MenuItem[];
 }
 
-// URL del backend en Railway
 const API_URL = "https://mint-menu-production.up.railway.app/menu";
 
 const Admin = () => {
-  const [menu, setMenu] = useState<Menu>({});
   const [editedMenu, setEditedMenu] = useState<Menu>({});
+  const [hasChanges, setHasChanges] = useState(false);
+  const [selectedMenu, setSelectedMenu] = useState<string>("");
+  const [searchTerm, setSearchTerm] = useState<string>(""); // <-- Nuevo estado
+  const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
     fetch(API_URL)
       .then((res) => res.json())
       .then((data: Menu) => {
-        setMenu(data);
         setEditedMenu(data);
+        // Simulamos 1s de espera para el spinner
+        setTimeout(() => setLoading(false), 1000);
       })
-      .catch((error) => console.error("Error cargando el menú:", error));
+      .catch((err) => {
+        console.error("Error cargando el menú:", err);
+        setLoading(false);
+      });
   }, []);
 
-  const actualizarPrecio = (categoria: string, index: number, nuevoPrecio: string) => {
-    const nuevoMenu = { ...editedMenu };
-    nuevoMenu[categoria][index].precio = parseFloat(nuevoPrecio);
-    setEditedMenu(nuevoMenu);
+  const actualizarPrecio = (categoria: string, index: number, nuevo: string) => {
+    setEditedMenu((prev) => {
+      const copia = { ...prev };
+      if (Array.isArray(copia[categoria])) {
+        copia[categoria][index].precio = parseFloat(nuevo);
+        setHasChanges(true);
+      }
+      return copia;
+    });
   };
 
   const guardarCambios = () => {
     fetch(API_URL, {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify(editedMenu),
     })
       .then((res) => {
         if (res.ok) {
-          alert("Cambios guardados en el servidor.");
+          setHasChanges(false);
+          alert("Guardado con éxito");
         } else {
-          alert("Error al guardar los cambios.");
+          alert("Error al guardar");
         }
       })
-      .catch((error) => console.error("Error al guardar los cambios:", error));
+      .catch(console.error);
   };
+
+  // Filtramos las categorías según selección y luego los items por término de búsqueda
+  const categoriasAMostrar = Object.keys(editedMenu)
+    .filter((cat) => Array.isArray(editedMenu[cat]))
+    .filter((cat) => (selectedMenu ? cat === selectedMenu : true));
+
+  if (loading) {
+    return (
+      <div className="admin-spinner-container">
+        <div className="admin-spinner"></div>
+      </div>
+    );
+  }
 
   return (
     <div className="admin-container">
       <h2>Administración</h2>
-      {Object.keys(editedMenu || {}).map((categoria) => {
-        const items = editedMenu[categoria];
-        if (!Array.isArray(items)) {
-          return null;
-        }
-        if (categoria === "categories") {
-          return null;
-        }
+
+      {/* Select de categorías */}
+      <div className="admin-select-container">
+        <label htmlFor="menu-select">Selecciona Menú:</label>
+        <select
+          id="menu-select"
+          value={selectedMenu}
+          onChange={(e) => setSelectedMenu(e.target.value)}
+          className="admin-select"
+        >
+          <option value="">Todos</option>
+          <option value="desayuno">Desayuno</option>
+          <option value="almuerzo">Almuerzo</option>
+          <option value="merienda">Merienda</option>
+          <option value="cena">Cena</option>
+        </select>
+      </div>
+
+      {/* Input de búsqueda */}
+      <div className="admin-search-container">
+        <input
+          type="text"
+          placeholder="Buscar producto..."
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value.toLowerCase())}
+          className="admin-search"
+        />
+      </div>
+
+      {/* Mostrar categorías e ítems filtrados */}
+      {categoriasAMostrar.map((categoria) => {
+        const items = Array.isArray(editedMenu[categoria])
+          ? editedMenu[categoria].filter((item) =>
+              item.nombre.toLowerCase().includes(searchTerm)
+            )
+          : [];
+        if (items.length === 0) return null;
         return (
           <div key={categoria} className="admin-category">
             <h3>{categoria.toUpperCase()}</h3>
             <ul>
-              {items.map((item, index) => (
-                <li key={index}>
-                  <span>{item.nombre} - $</span>
+              {items.map((item, i) => (
+                <li key={i}>
+                  <span>{item.nombre} – $</span>
                   <input
                     type="number"
                     value={item.precio}
-                    onChange={(e) => actualizarPrecio(categoria, index, e.target.value)}
+                    onChange={(e) =>
+                      actualizarPrecio(categoria, i, e.target.value)
+                    }
                   />
                 </li>
               ))}
@@ -82,7 +135,18 @@ const Admin = () => {
           </div>
         );
       })}
-      <button className="admin-save-button" onClick={guardarCambios}>
+
+      {hasChanges && (
+        <div className="admin-changes-alert">
+          ¡Tienes cambios sin guardar!
+        </div>
+      )}
+
+      <button
+        className="admin-save-button"
+        onClick={guardarCambios}
+        disabled={!hasChanges}
+      >
         Guardar Cambios
       </button>
     </div>
